@@ -1,0 +1,32 @@
+﻿@model WebApp.Models.LoginModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+
+    <h2>Login</h2>
+
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div>
+            <label for="UserEmail">Email:</label>
+            @Html.TextBoxFor(m => m.UserEmail)
+            @Html.ValidationMessageFor(m => m.UserEmail)
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            @Html.PasswordFor(m => m.password)
+            @Html.ValidationMessageFor(m => m.password)
+        </div>
+        <div>
+            <button type="submit">Login</button>
+        </div>
+    }
+
+</body>
+</html>

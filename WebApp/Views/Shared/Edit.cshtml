@@ -1,0 +1,45 @@
+﻿@model WebApp.Models.Registration
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Registration</h1>
+
+<form asp-controller="WebRegistration" form asp-action="Edit" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="UserId" />
+
+    <div class="form-group">
+        <label asp-for="UserFirstName" class="control-label">First Name:</label>
+        <input asp-for="UserFirstName" class="form-control" />
+        <span asp-validation-for="UserFirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UserLastName" class="control-label">Last Name:</label>
+        <input asp-for="UserLastName" class="form-control" />
+        <span asp-validation-for="UserLastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UserEmail" class="control-label">Email:</label>
+        <input asp-for="UserEmail" class="form-control" />
+        <span asp-validation-for="UserEmail" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="password" class="control-label"></label>
+        <input asp-for="password" class="form-control" />
+        <span asp-validation-for="password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="UserPhone" class="control-label">Phone:</label>
+        <input asp-for="UserPhone" class="form-control" />
+        <span asp-validation-for="UserPhone" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit"  class="btn btn-primary">Save Changes</button>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
